@@ -1,1 +1,1 @@
-# 50dayDSA challenge
+# 50 day Data structures and algorithm challenge
