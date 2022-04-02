@@ -15,8 +15,7 @@ vector<int> topView(Node *root)
         Node *node = it.first;
         int line = it.second;
 
-        if (mp.find(line) == mp.end())
-            mp[line] = node->data;
+        mp[line] = node->data;
 
         if (node->left)
             todo.push({node->left, line - 1});
