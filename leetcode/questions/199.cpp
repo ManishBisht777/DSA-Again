@@ -15,4 +15,8 @@ void recurssion(TreeNode *root, int level, vector<int> &ans)
         ans.push_back(root->val);
     recurssion(root->right, level + 1, ans);
     recurssion(root->left, level + 1, ans);
+
+    // for left view
+    // recurssion(root->left, level + 1, ans);
+    // recurssion(root->right, level + 1, ans);s
 }
