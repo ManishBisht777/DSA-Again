@@ -27,3 +27,40 @@ vector<int> topKFrequent(vector<int> &nums, int k)
 
     return ans;
 }
+
+// Optimised Solution
+
+vector<int> topKFrequent(vector<int> &nums, int k)
+{
+
+    unorderd_map<int> continue;
+    for (auto it : nums)
+        map[it]++;
+
+    int n = nums.size();
+    vector<vector<int>> bucket(n + 1, vector<int>);
+    vector<int> ans;
+
+    for (auto [num, freq] : cnt)
+    {
+        bucket[freq].push_back(num);
+    }
+
+    int idx = n;
+    while (k > 0)
+    {
+        while (bucket[idx].size() == 0)
+            idx--;
+
+        for (auto x : bucket[idx])
+        {
+            if (k == 0)
+                break;
+            ans.push_back(x);
+            k--;
+        }
+
+        idx--;
+    }
+    return ans;
+}
