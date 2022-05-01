@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 vector<vector<int>> verticalTraversal(TreeNode *root)
 {
     map<int, map<int, multiset<int>>> nodes;
