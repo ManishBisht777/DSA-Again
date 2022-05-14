@@ -1,13 +1,11 @@
 void dfs(vector<int> &ans, vector<int> &vis, vector<int> adj[], int curr)
 {
-    if (vis[curr])
-        return;
-
     ans.push_back(curr);
     vis[curr] = 1;
 
     for (auto it : adj[curr])
-        dfs(ans, vis, adj, it);
+        if (!vis[it])
+            dfs(ans, vis, adj, it);
 }
 
 vector<int> dfsOfGraph(int v, vector<int> adj[])
