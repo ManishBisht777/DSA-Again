@@ -1,11 +1,11 @@
-void dfs(int node, vector<int> &mit, vector<int> &low,
+void dfs(int node, vector<int> &tin, vector<int> &low,
          int parent, vector<vector<int>> &adj,
          vector<bool> &vis,
          vector<vector<int>> &ans)
 {
     static int time = 0;
     vis[node] = 1;
-    mit[node] = low[node] = time++;
+    tin[node] = low[node] = time++;
 
     for (auto it : adj[node])
     {
@@ -14,14 +14,14 @@ void dfs(int node, vector<int> &mit, vector<int> &low,
 
         if (!vis[it])
         {
-            dfs(it, mit, low, node, adj, vis, ans);
+            dfs(it, tin, low, node, adj, vis, ans);
             low[node] = min(low[it], low[node]);
-            if (low[it] > mit[node])
+            if (low[it] > tin[node])
                 ans.push_back({node, it});
         }
         else
         {
-            low[node] = min(low[node], mit[it]);
+            low[node] = min(low[node], tin[it]);
         }
     }
 }
